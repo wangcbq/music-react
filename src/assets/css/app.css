@@ -1,0 +1,85 @@
+.app {
+  width: 100%;
+  height: 100%;
+}
+.main {
+  width: 100%;
+  height: 100%;
+  background: #1ac5d1;
+  /* background-image: url(../../assets/poster.jpg);
+  background-repeat: no-repeat;
+  background-size: cover; */
+  flex-direction: column;
+  text-align: center;
+}
+.main .logo {
+  padding-top: 40%;
+}
+.svg {
+  animation: offset 1s linear infinite alternate;
+  -webkit-animation: offset 1s linear infinite alternate;
+}
+@keyframes offset {
+  from {
+    transform: scale3d(1, 1, 1) translate3d(0, -15px, 0);
+    -webkit-transform: scale3d(1, 1, 1) translate3d(0, -15px, 0);
+    -moz-transform: scale3d(1, 1, 1) translate3d(0, -15px, 0);
+    -ms-transform: scale3d(1, 1, 1) translate3d(0, -15px, 0);
+    -o-transform: scale3d(1, 1, 1) translate3d(0, -15px, 0);
+}
+  to {
+    transform: scale3d(1.1, 1.1, 1.1) translate3d(0, 15px, 0);
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) translate3d(0, 15px, 0);
+    -moz-transform: scale3d(1.1, 1.1, 1.1) translate3d(0, 15px, 0);
+    -ms-transform: scale3d(1.1, 1.1, 1.1) translate3d(0, 15px, 0);
+    -o-transform: scale3d(1.1, 1.1, 1.1) translate3d(0, 15px, 0);
+}
+}
+.main .buttons {
+  padding-top: 25%;
+}
+/* 路由过场动画 fade */
+.fade-enter {
+  opacity: 0;
+  transform: scale(0);
+  -webkit-transform: scale(0);
+  -moz-transform: scale(0);
+  -ms-transform: scale(0);
+  -o-transform: scale(0);
+}
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform-origin: center center;
+  transition: 300ms ease-out;
+  -webkit-transition: 300ms ease-out;
+  -moz-transition: 300ms ease-out;
+  -ms-transition: 300ms ease-out;
+  -o-transition: 300ms ease-out;
+}
+.fade-exit{
+  opacity: 1;
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+}
+.fade-exit.fade-exit-active{
+  opacity:0;
+  transform: scale(0);
+  -webkit-transform: scale(0);
+  -moz-transform: scale(0);
+  -ms-transform: scale(0);
+  -o-transform: scale(0);
+  transform-origin: center center;
+  transition: 300ms ease-out;
+  -webkit-transition: 300ms ease-out;
+  -moz-transition: 300ms ease-out;
+  -ms-transition: 300ms ease-out;
+  -o-transition: 300ms ease-out;
+}
