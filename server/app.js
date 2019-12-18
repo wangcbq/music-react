@@ -82,6 +82,7 @@ fs.readdirSync(path.join(__dirname, 'module')).reverse().forEach(file => {
   app.use(route, (req, res) => {
     let query = Object.assign({}, req.query, req.body, { cookie: req.cookies })
     if ('phone' in query) query.phone = Decrypt(query.phone);
+    if ('captcha' in query) query.captcha = Decrypt(query.captcha);
     if ('email' in query) query.email = Decrypt(query.email);
     if ('password' in query) query.password = Decrypt(query.password);
     question(query, request)

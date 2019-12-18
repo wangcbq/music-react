@@ -1,7 +1,7 @@
 import axios from 'axios';
 import CryptoJS from 'crypto-js';
-
-const baseURL = 'http://192.168.2.140:3000';
+// 接口地址（打包时需要修改为真实接口地址）
+const baseURL = `${window.location.protocol}//${window.location.hostname}:3000`;
 const http = axios.create({
   baseURL,
   timeout: 3000
@@ -25,6 +25,8 @@ function Encrypt(word) {
 
 const api = {
   checkRegister: phone => http(`/cellphone/existence/check?phone=${Encrypt(phone)}`),
+  captchaSend: phone => http(`/captcha/sent?phone=${Encrypt(phone)}`),
+  captchaVerify: ({ phone, captcha }) => http(`/captcha/verify?phone=${Encrypt(phone)}&captcha=${Encrypt(captcha)}`),
   login: ({ phone, password }) => http.get(`/login/cellphone?phone=${Encrypt(phone)}&password=${Encrypt(password)}`),
   loginStatus: () => http.get(`/login/status`),
 };

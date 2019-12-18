@@ -8,12 +8,14 @@ const loading = () => (<div><Loader active size='large'>loading...</Loader></div
 const loader = loader => Loadable({ loader, loading });
 
 const App = loader(() => import('../components/App'));
-const Login = loader(() => import('../components/login'));
-const Password = loader(() => import('../components/login/password'));
+const Login = loader(() => import('../components/user'));
+const Captcha = loader(() => import('../components/user/captcha'));
+const Password = loader(() => import('../components/user/password'));
 
 const routes = [
   { path: '/', name: 'home', component: App },
   { path: '/login', name: 'login', component: Login },
+  { path: '/captcha', name: 'captcha', component: Captcha },
   { path: '/password', name: 'password', component: Password },
 ];
 

@@ -1,23 +1,23 @@
 .app {
   width: 100%;
   height: 100%;
-}
-.main {
-  width: 100%;
-  height: 100%;
-  background: #1ac5d1;
-  /* background-image: url(../../assets/poster.jpg);
-  background-repeat: no-repeat;
-  background-size: cover; */
-  flex-direction: column;
-  text-align: center;
-}
-.main .logo {
-  padding-top: 40%;
-}
-.svg {
-  animation: offset 1s linear infinite alternate;
-  -webkit-animation: offset 1s linear infinite alternate;
+  .main {
+    width: 100%;
+    height: 100%;
+    background: #1ac5d1;
+    flex-direction: column;
+    text-align: center;
+    .logo {
+      padding-top: 40%;
+    }
+    .svg {
+      animation: offset 1s linear infinite alternate;
+      -webkit-animation: offset 1s linear infinite alternate;
+    }
+    .buttons {
+      padding-top: 25%;
+    }
+  }
 }
 @keyframes offset {
   from {
@@ -26,17 +26,30 @@
     -moz-transform: scale3d(1, 1, 1) translate3d(0, -15px, 0);
     -ms-transform: scale3d(1, 1, 1) translate3d(0, -15px, 0);
     -o-transform: scale3d(1, 1, 1) translate3d(0, -15px, 0);
-}
+  }
   to {
     transform: scale3d(1.1, 1.1, 1.1) translate3d(0, 15px, 0);
     -webkit-transform: scale3d(1.1, 1.1, 1.1) translate3d(0, 15px, 0);
     -moz-transform: scale3d(1.1, 1.1, 1.1) translate3d(0, 15px, 0);
     -ms-transform: scale3d(1.1, 1.1, 1.1) translate3d(0, 15px, 0);
     -o-transform: scale3d(1.1, 1.1, 1.1) translate3d(0, 15px, 0);
+  }
 }
-}
-.main .buttons {
-  padding-top: 25%;
+@-webkit-keyframes offset {
+  from {
+    transform: scale3d(1, 1, 1) translate3d(0, -15px, 0);
+    -webkit-transform: scale3d(1, 1, 1) translate3d(0, -15px, 0);
+    -moz-transform: scale3d(1, 1, 1) translate3d(0, -15px, 0);
+    -ms-transform: scale3d(1, 1, 1) translate3d(0, -15px, 0);
+    -o-transform: scale3d(1, 1, 1) translate3d(0, -15px, 0);
+  }
+  to {
+    transform: scale3d(1.1, 1.1, 1.1) translate3d(0, 15px, 0);
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) translate3d(0, 15px, 0);
+    -moz-transform: scale3d(1.1, 1.1, 1.1) translate3d(0, 15px, 0);
+    -ms-transform: scale3d(1.1, 1.1, 1.1) translate3d(0, 15px, 0);
+    -o-transform: scale3d(1.1, 1.1, 1.1) translate3d(0, 15px, 0);
+  }
 }
 /* 路由过场动画 fade */
 .fade-enter {

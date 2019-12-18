@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
-import '../assets/css/app.css';
+import '../assets/scss/app.scss';
 
 function App() {
   return (

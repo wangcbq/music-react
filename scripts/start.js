@@ -15,6 +15,7 @@ process.on('unhandledRejection', err => {
 require('../config/env');
 
 
+const os = require('os');
 const fs = require('fs');
 const chalk = require('react-dev-utils/chalk');
 const webpack = require('webpack');
@@ -39,10 +40,16 @@ const isInteractive = process.stdout.isTTY;
 if (!checkRequiredFiles([paths.appHtml, paths.appIndexJs])) {
   process.exit(1);
 }
-
+let localhost = ''
+try {
+  const network = os.networkInterfaces()
+  localhost = network[Object.keys(network)[0]][1].address
+} catch (e) {
+  localhost = 'localhost'
+}
 // Tools like Cloud9 rely on this.
 const DEFAULT_PORT = parseInt(process.env.PORT, 10) || 5000;
-const HOST = process.env.HOST || '0.0.0.0';
+const HOST = process.env.HOST || localhost;
 
 if (process.env.HOST) {
   console.log(
