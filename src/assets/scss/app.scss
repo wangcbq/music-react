@@ -1,98 +1,55 @@
+@import "./varables.scss";
+@import "./mixin.scss";
 .app {
-  width: 100%;
-  height: 100%;
+  @include full-percent;
+  overflow: hidden;
   .main {
-    width: 100%;
-    height: 100%;
-    background: #1ac5d1;
+    background: $skin;
     flex-direction: column;
     text-align: center;
-    .logo {
-      padding-top: 40%;
+    @include full-percent;
+    @media screen and (orientation: portrait) {
+      // 竖屏
+      .logo { padding-top: 40%; }
+      .buttons { padding-top: 25%; }
+    }
+    @media screen and (orientation: landscape) {
+      // 横屏
+      .logo { padding-top: 5%; }
+      .buttons { padding-top: 2%; }
     }
     .svg {
       animation: offset 1s linear infinite alternate;
       -webkit-animation: offset 1s linear infinite alternate;
     }
-    .buttons {
-      padding-top: 25%;
-    }
   }
 }
 @keyframes offset {
-  from {
-    transform: scale3d(1, 1, 1) translate3d(0, -15px, 0);
-    -webkit-transform: scale3d(1, 1, 1) translate3d(0, -15px, 0);
-    -moz-transform: scale3d(1, 1, 1) translate3d(0, -15px, 0);
-    -ms-transform: scale3d(1, 1, 1) translate3d(0, -15px, 0);
-    -o-transform: scale3d(1, 1, 1) translate3d(0, -15px, 0);
-  }
-  to {
-    transform: scale3d(1.1, 1.1, 1.1) translate3d(0, 15px, 0);
-    -webkit-transform: scale3d(1.1, 1.1, 1.1) translate3d(0, 15px, 0);
-    -moz-transform: scale3d(1.1, 1.1, 1.1) translate3d(0, 15px, 0);
-    -ms-transform: scale3d(1.1, 1.1, 1.1) translate3d(0, 15px, 0);
-    -o-transform: scale3d(1.1, 1.1, 1.1) translate3d(0, 15px, 0);
-  }
+  from { @include offset-from; }
+  to { @include offset-to; }
 }
 @-webkit-keyframes offset {
-  from {
-    transform: scale3d(1, 1, 1) translate3d(0, -15px, 0);
-    -webkit-transform: scale3d(1, 1, 1) translate3d(0, -15px, 0);
-    -moz-transform: scale3d(1, 1, 1) translate3d(0, -15px, 0);
-    -ms-transform: scale3d(1, 1, 1) translate3d(0, -15px, 0);
-    -o-transform: scale3d(1, 1, 1) translate3d(0, -15px, 0);
-  }
-  to {
-    transform: scale3d(1.1, 1.1, 1.1) translate3d(0, 15px, 0);
-    -webkit-transform: scale3d(1.1, 1.1, 1.1) translate3d(0, 15px, 0);
-    -moz-transform: scale3d(1.1, 1.1, 1.1) translate3d(0, 15px, 0);
-    -ms-transform: scale3d(1.1, 1.1, 1.1) translate3d(0, 15px, 0);
-    -o-transform: scale3d(1.1, 1.1, 1.1) translate3d(0, 15px, 0);
-  }
+  from { @include offset-from; }
+  to { @include offset-to; }
 }
-/* 路由过场动画 fade */
+// 路由过场动画 fade
 .fade-enter {
   opacity: 0;
-  transform: scale(0);
-  -webkit-transform: scale(0);
-  -moz-transform: scale(0);
-  -ms-transform: scale(0);
-  -o-transform: scale(0);
+  @include scale-0;
 }
 .fade-enter.fade-enter-active {
   opacity: 1;
-  transform: scale(1);
-  -webkit-transform: scale(1);
-  -moz-transform: scale(1);
-  -ms-transform: scale(1);
-  -o-transform: scale(1);
   transform-origin: center center;
-  transition: 300ms ease-out;
-  -webkit-transition: 300ms ease-out;
-  -moz-transition: 300ms ease-out;
-  -ms-transition: 300ms ease-out;
-  -o-transition: 300ms ease-out;
+  @include scale-1;
+  @include transition(300ms);
 }
 .fade-exit{
   opacity: 1;
-  transform: scale(1);
-  -webkit-transform: scale(1);
-  -moz-transform: scale(1);
-  -ms-transform: scale(1);
-  -o-transform: scale(1);
+  @include scale-1;
 }
 .fade-exit.fade-exit-active{
   opacity:0;
-  transform: scale(0);
-  -webkit-transform: scale(0);
-  -moz-transform: scale(0);
-  -ms-transform: scale(0);
-  -o-transform: scale(0);
   transform-origin: center center;
-  transition: 300ms ease-out;
-  -webkit-transition: 300ms ease-out;
-  -moz-transition: 300ms ease-out;
-  -ms-transition: 300ms ease-out;
-  -o-transition: 300ms ease-out;
+  @include scale-0;
+  @include transition(300ms);
 }

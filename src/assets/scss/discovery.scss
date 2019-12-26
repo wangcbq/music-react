@@ -1,0 +1,19 @@
+@import "./mixin.scss";
+.banner-item {
+  position: relative;
+  .title {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 0.8em;
+    line-height: 0.8em;
+    color: #fff;
+    padding: 0.42em;
+    font-size: 0.8em;
+    border-radius: .3125em 0 .3125em 0;
+    -webkit-border-radius: .3125em 0 .3125em 0;
+    -moz-border-radius: .3125em 0 .3125em 0;
+    -ms-border-radius: .3125em 0 .3125em 0;
+    -o-border-radius: .3125em 0 .3125em 0;
+}
+}
