@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Icon, Input, Message } from 'semantic-ui-react';
-import '../../assets/scss/user.scss';
+import Fade from '../animate/fade';
+import '../../assets/scss/login.scss';
 import api from '../../api';
 
-function Login(props) {
+function Login({ history }) {
   const [phone, setPhone] = useState('');
   const [isError, setIsError] = useState(false);
   useEffect(() => {
     inputObj.current.focus();
   });
   const inputObj = React.createRef();
-  const { history } = props;
   const handleNextStep = async () => {
     if (/^[1]([3-9])[0-9]{9}$/.test(phone)) {
       setIsError(false);
@@ -70,4 +70,4 @@ function Login(props) {
   );
 }
 
-export default Login;
+export default Fade(Login);

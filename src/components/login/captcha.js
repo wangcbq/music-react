@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Icon, Message } from 'semantic-ui-react';
-import '../../assets/scss/user.scss';
+import Fade from '../animate/fade';
+import '../../assets/scss/login.scss';
 import api from '../../api';
 
-function Captcha(props) {
+function Captcha({ history }) {
   const [captcha, setCaptcha] = useState('');
   const [isError, setIsError] = useState(false);
   let [countDown, setCountDown] = useState(60);
@@ -27,17 +28,20 @@ function Captcha(props) {
     }, 1000);
   };
   countDownStart();
-  const { history } = props;
   const phone = history.location.state && history.location.state.phone;
   const phoneNum = phone ? (() => phone.slice(0, 3) + '*'.repeat(4) + phone.slice(-4))() : '';
   const inputFocus = () => inputObj.current.focus();
   // 检验验证码
   const captchaVerify = async () => {
     if (phone && captcha) {
-      const result = await api.captchaVerify({ phone, captcha });
-      if (result.code === 200) {
-        console.log('成功');
-      } else {
+      try {
+        const result = await api.captchaVerify({ phone, captcha });
+        if (result.code === 200) {
+          console.log('成功');
+        } else {
+          setIsError(true);
+        }
+      } catch (e) {
         setIsError(true);
       }
     }
@@ -87,4 +91,4 @@ function Captcha(props) {
   );
 }
 
-export default Captcha;
+export default Fade(Captcha);

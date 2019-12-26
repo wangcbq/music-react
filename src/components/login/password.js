@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Icon, Input, Message } from 'semantic-ui-react';
-import '../../assets/scss/user.scss';
+import Fade from '../animate/fade';
+import '../../assets/scss/login.scss';
 import api from '../../api';
 
-function Password(props) {
+function Password({ history }) {
   const [passwd, setPasswd] = useState('');
   const [isError, setIsError] = useState(false);
   useEffect(() => {
     inputObj.current.focus();
   });
-  const { history } = props;
   const inputObj = React.createRef();
   let errorMsg = {
     header: 'please input your password.',
@@ -59,4 +59,4 @@ function Password(props) {
   );
 }
 
-export default Password;
+export default Fade(Password);

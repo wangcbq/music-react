@@ -1,9 +1,9 @@
 import React from 'react';
 import { Button } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
-import '../assets/scss/app.scss';
+import Fade from './animate/fade';
 
-function App() {
+function App({ history }) {
   return (
     <div className='main'>
       <div className='logo'>
@@ -20,11 +20,11 @@ function App() {
             <Button negative>手机号登录</Button>
           </Link>
           <Button.Or />
-          <Button positive>开始体验</Button>
+          <Button positive onClick={() => history.replace('/wrapper/discovery')}>开始体验</Button>
         </Button.Group>
       </div>
     </div>
   );
 }
 
-export default App;
+export default Fade(App);
