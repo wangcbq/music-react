@@ -16,7 +16,7 @@ http.interceptors.response.use(response => {
 const key = CryptoJS.enc.Utf8.parse("1234123412ABCDEF");
 // 密钥偏移量
 const iv = CryptoJS.enc.Utf8.parse('ABCDEF1234123412');
-
+// aes加密
 function Encrypt(word) {
   let srcs = CryptoJS.enc.Utf8.parse(word);
   let encrypted = CryptoJS.AES.encrypt(srcs, key, { iv: iv, mode: CryptoJS.mode.CBC, padding: CryptoJS.pad.Pkcs7 });
