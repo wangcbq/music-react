@@ -1,0 +1,48 @@
+@import "./mixin.scss";
+.sheet-title {
+  @include flex-between;
+  button {
+    height: 1.8em;
+    font-size: 0.8em;
+    outline: none;
+    background: none;
+    border: 1px solid #eee;
+    @include radius(5em);
+  }
+}
+.sheet-list {
+  flex-flow: row wrap;
+  @include flex-between;
+  .sheet-item {
+    width: 31%;
+    margin-bottom: 1.5em;
+    position: relative;
+    font-size: 0.8em;
+    line-height: 1.5em;
+    .play-count {
+      text-align: right;
+      width: 100%;
+      height: 25%;
+      color: #eff;
+      padding: 0 0.3em;
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.25), transparent);;
+      @include right-top;
+      @include radius(0.3125em, 0.3125em, 0, 0);
+    }
+    .play-icon {
+      @include right-bottom(absolute, 0, 3.8em);
+    }
+    .sheet-name {
+      padding-top: 0.2em;
+      @include multi-ellipsis(2);
+    }
+    .song {
+      padding-top: 0.2em;
+      @include ellipsis;
+    }
+    .singer {
+      color: #aaa;
+      @include ellipsis;
+    }
+  }
+}

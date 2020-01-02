@@ -2,10 +2,10 @@ import React, { useEffect } from 'react';
 import Swiper from 'swiper/js/swiper.js';
 import 'swiper/css/swiper.min.css';
 
-function Banner({ children }) {
+function Banner({ loop, children }) {
   useEffect(() => {
     const swiper = new Swiper('.swiper-container', {
-      loop: true,
+      loop: loop,
       spaceBetween: 20,
       autoplay: {
         disableOnInteraction: false
@@ -16,10 +16,19 @@ function Banner({ children }) {
       },
       effect: 'flip'
     });
-    return () => {
-      if (swiper) swiper.destroy();
+    const change = () => {
+      if (window.location.hash === '#/discovery') {
+        swiper.autoplay.start();
+      } else {
+        swiper.autoplay.stop();
+      }
     };
-  });
+    window.addEventListener('hashchange', change);
+    return () => {
+      window.removeEventListener('hashchange', change);
+      swiper && swiper.destroy();
+    };
+  }, [loop]);
   return (
     <div className='swiper-container'>
       <div className='swiper-wrapper'>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
-import Fade from './animate/fade';
+import Fade from '../components/animate/fade';
 
 function App({ history }) {
   return (
@@ -20,7 +20,7 @@ function App({ history }) {
             <Button negative>手机号登录</Button>
           </Link>
           <Button.Or />
-          <Button positive onClick={() => history.replace('/wrapper/discovery')}>开始体验</Button>
+          <Button positive onClick={() => history.replace('/wrapper#/discovery')}>开始体验</Button>
         </Button.Group>
       </div>
     </div>

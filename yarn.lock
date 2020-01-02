@@ -4995,7 +4995,7 @@ hmac-drbg@^1.0.0:
     minimalistic-assert "^1.0.0"
     minimalistic-crypto-utils "^1.0.1"
 
-hoist-non-react-statics@^3.1.0:
+hoist-non-react-statics@^3.1.0, hoist-non-react-statics@^3.3.0:
   version "3.3.1"
   resolved "https://registry.npm.taobao.org/hoist-non-react-statics/download/hoist-non-react-statics-3.3.1.tgz#101685d3aff3b23ea213163f6e8e12f4f111e19f"
   integrity sha1-EBaF06/zsj6iExY/bo4S9PER4Z8=
@@ -8798,6 +8798,15 @@ rc@^1.2.7:
     ini "~1.3.0"
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
+
+react-activation@^0.3.4:
+  version "0.3.4"
+  resolved "https://registry.npm.taobao.org/react-activation/download/react-activation-0.3.4.tgz#f4cfa02575f777115e11d8dee60f6b6b437dc5db"
+  integrity sha1-9M+gJXX3dxFeEdje5g9ra0N9xds=
+  dependencies:
+    create-react-context "^0.3.0"
+    hoist-non-react-statics "^3.3.0"
+    jsx-ast-utils "^2.2.1"
 
 react-app-polyfill@^1.0.5:
   version "1.0.5"

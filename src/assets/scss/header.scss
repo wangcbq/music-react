@@ -1,0 +1,58 @@
+@import "./varables.scss";
+@import "./mixin.scss";
+.head {
+  width: 100%;
+  padding: 1em $padding;
+  background: rgba($color: #ffffff, $alpha: 0.95);
+  @include flex-between;
+  .tab-list {
+    width: 70%;
+    @include flex-between;
+    .tab-item {
+      color: gray;
+      font-weight: bold;
+      font-size: 1.1rem !important;
+      &.active {
+        color: #333;
+        font-weight: bold;
+        font-size: 1.28571429rem !important;
+        line-height: 1.1em;
+      }
+    }
+  }
+}
+.left-sidebar {
+  width: 100%;
+  @include left-top(fixed);
+  .ui.thin.left.sidebar, .ui.thin.right.sidebar { width: 75%; }
+  .user-info {
+    .user-avatar {
+      width: 5em;
+      margin-bottom: 1em;
+    }
+    .box {
+      width: 100%;
+      @include flex-between;
+      .user-detail {
+        display: flex;
+        align-items: center;
+        max-width: 11em;
+        .user-name {
+          font-size: 1.1em;
+          font-weight: bold;
+          margin-right: 0.5em;
+          @include ellipsis;
+        }
+        .user-level {
+          font-size: 0.7em;
+          background: #eee;
+          text-align: center;
+          width: 3em;
+          height: 1.5em;
+          line-height: 1.5em;
+          @include radius(0.5em);
+        }
+      }
+    }
+  }
+}

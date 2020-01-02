@@ -2,34 +2,48 @@
   width: 100%;
   height: 100%;
 }
-@mixin fixed-left-top {
-  position: fixed;
-  left: 0;
-  top: 0;
+@mixin left-top($position: absolute, $left: 0, $top: 0) {
+  position: $position;
+  left: $left;
+  top: $top;
 }
-@mixin fixed-left-bottom {
-  position: fixed;
-  left: 0;
-  bottom: 0;
+@mixin left-bottom($position: absolute, $left: 0, $bottom: 0) {
+  position: $position;
+  left: $left;
+  bottom: $bottom;
 }
-@mixin fixed-right-top {
-  position: fixed;
-  right: 0;
-  top: 0;
+@mixin right-top($position: absolute, $right: 0, $top: 0) {
+  position: $position;
+  right: $right;
+  top: $top;
 }
-@mixin fixed-right-bottom {
-  position: fixed;
-  right: 0;
-  bottom: 0;
+@mixin right-bottom($position: absolute, $right: 0, $bottom: 0) {
+  position: $position;
+  right: $right;
+  bottom: $bottom;
 }
 @mixin ellipsis {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
 }
+@mixin multi-ellipsis($row) {
+  overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $row;
+  -webkit-box-orient: vertical;
+}
 @mixin flex-between {
   display: flex;
   justify-content: space-between;
+}
+@mixin radius($top, $right: $top, $bottom: $top, $left: $top) {
+  border-radius: $top $right $bottom $left;
+  -webkit-border-radius: $top $right $bottom $left;
+  -moz-border-radius: $top $right $bottom $left;
+  -ms-border-radius: $top $right $bottom $left;
+  -o-border-radius: $top $right $bottom $left;
 }
 @mixin offset-from {
   transform: scale3d(1, 1, 1) translate3d(0, -15px, 0);

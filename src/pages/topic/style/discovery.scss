@@ -1,0 +1,40 @@
+@import "../../../assets/scss/varables.scss";
+@import "../../../assets/scss/mixin.scss";
+.banner-item {
+  position: relative;
+  .title {
+    height: 0.8em;
+    line-height: 0.9em;
+    color: #fff;
+    padding: 0.5em;
+    font-size: 0.8em;
+    @include right-bottom;
+    @include radius(0.3125em, 0, 0.3125em, 0);
+  }
+}
+.menu {
+  margin-top: 1em;
+  @include flex-between;
+  .menu-item {
+    text-align: center;
+    position: relative;
+    width: 3.5em;
+    height: 5.5em;
+    .menu-icon {
+      height: 3.5em;
+      line-height: 3.5em;
+      background: $red;
+      text-align: center;
+      color: #fff;
+      @include radius(50%);
+      i.icon {
+        margin: 0.05rem;
+      }
+    }
+    .menu-name {
+      font-size: 0.8em;
+      width: 100%;
+      @include left-bottom;
+    }
+  }
+}

@@ -1,0 +1,59 @@
+@import "./varables.scss";
+@import "./mixin.scss";
+.bottom-sidebar {
+  width: 100%;
+  overflow: hidden;
+  @include left-top(fixed);
+  .list-box {
+    background: #fff;
+    @include radius(1em, 1em, 0, 0);
+    .list-title {
+      padding: 0 1em;
+      height: 3.2em;
+      align-items: center;
+      border-bottom: 1px solid #eee;
+      @include flex-between;
+      .right-side {
+        display: flex;
+        .line {
+          padding-right: 1em;
+          margin-right: 1em;
+          border-right: 1px solid #eee;
+        }
+      }
+    }
+    .list-content {
+      padding: 1em 1em 0;
+      overflow-x: hidden;
+      height: 20em;
+      &::-webkit-scrollbar { display:none; }
+      .list-item {
+        padding-bottom: 1em;
+        @include flex-between;
+        .sing {
+          max-width: 90%;
+          @include ellipsis;
+          .singer {
+            font-size: 0.8em;
+            color: #aaa;
+          }
+        }
+      }
+    }
+  }
+}
+.mini-player {
+  width: 100%;
+  padding: 0.5em $padding;
+  align-items: center;
+  border-top: 1px solid #f3f1f1;
+  background: rgba($color: #ffffff, $alpha: 0.95);
+  @include flex-between;
+  .pane {
+    max-width: 60%;
+    height: 2.7em;
+    overflow: hidden;
+    .song-name { font-size: 1.1em; }
+    .content { color: #999; }
+  }
+}

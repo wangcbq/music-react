@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Icon, Input, Message } from 'semantic-ui-react';
-import Fade from '../animate/fade';
-import '../../assets/scss/login.scss';
+import Fade from '../../components/animate/fade';
+import './style/index.scss';
 import api from '../../api';
 
 function Login({ history }) {

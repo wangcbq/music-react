@@ -1,8 +1,14 @@
 @import "./varables.scss";
 @import "./mixin.scss";
+body {
+  overflow: hidden;
+}
 .app {
   @include full-percent;
   overflow: hidden;
+  .ui.divider:not(.vertical):not(.horizontal) {
+    border-top: 1px solid #eee;
+  }
   .main {
     background: $skin;
     flex-direction: column;
